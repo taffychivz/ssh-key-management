@@ -11,5 +11,5 @@ SUDOERS_GROUPS=" ssh_key_man_admin_test"
 ASSUMEROLE=""
 #Remove or set to 0 if you are done with configuration
 # /etc/cron.d/aws-ec2-ssh
-DONOTSYNC=0' 
+DONOTSYNC=0 
 EOL
