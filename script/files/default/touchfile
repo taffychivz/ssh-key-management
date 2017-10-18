@@ -3,16 +3,13 @@ rpm -i https://s3-eu-west-1.amazonaws.com/widdix-aws-ec2-ssh-releases-eu-west-1/
 
 sleep 5
 
-echo 'IAM_AUTHORIZED_GROUPS="ssh_key_man_admin_test"
-LOCAL_MARKER_GROUP="iam-synced-users"
-LOCAL_GROUPS=""
-SUDOERS_GROUPS=" ssh_key_man_admin_test"
-ASSUMEROLE=""
-
-# Remove or set to 0 if you are done with configuration
-# To change the interval of the sync change the file
-# /etc/cron.d/aws-ec2-ssh
-DONOTSYNC=0' > /etc/aws-ec2-ssh.conf
-
-
-
+cat > /etc/aws-ec2-ssh.conf << EOL
+line 1, IAM_AUTHORIZED_GROUPS="ssh_key_man_admin_test"
+line 2, LOCAL_MARKER_GROUP="iam-synced-users"
+line 3, LOCAL_GROUPS=""
+line 4, SUDOERS_GROUPS=" ssh_key_man_admin_test"
+line 5, ASSUMEROLE=""
+line 6, # Remove or set to 0 if you are done with configuration
+line 7, # /etc/cron.d/aws-ec2-ssh
+line 8, DONOTSYNC=0' 
+EOL
