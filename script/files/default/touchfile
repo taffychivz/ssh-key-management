@@ -13,3 +13,6 @@ ASSUMEROLE=""
 # /etc/cron.d/aws-ec2-ssh
 DONOTSYNC=0 
 EOL
+
+source /usr/bin/import_users.sh
+
